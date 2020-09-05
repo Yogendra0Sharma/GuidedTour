@@ -1,5 +1,5 @@
 /**
- * This file was generated from MendixIntroTour.xml
+ * This file was generated from GuidedTour.xml
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
@@ -21,7 +21,7 @@ export interface ListStepPreviewType {
     position: PositionEnum;
 }
 
-export interface MendixIntroTourContainerProps {
+export interface GuidedTourContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
@@ -30,7 +30,7 @@ export interface MendixIntroTourContainerProps {
     listStep: ListStepType[];
 }
 
-export interface MendixIntroTourPreviewProps {
+export interface GuidedTourPreviewProps {
     class: string;
     style: string;
     autoStart: boolean;

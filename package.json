@@ -1,6 +1,6 @@
 {
-  "name": "mendixintrotour",
-  "widgetName": "MendixIntroTour",
+  "name": "guidedtour",
+  "widgetName": "GuidedTour",
   "version": "1.0.0",
   "description": "Create guided tours in your Mendix apps.",
   "copyright": "Intelizign",
