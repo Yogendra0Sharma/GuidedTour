@@ -1,17 +1,35 @@
 ## GuidedTour
-[Create guided tours in your Mendix apps.]
+Mendix Guided Tour using [React Joyride](https://github.com/gilbarbara/react-joyride) (MIT License)
+
+![logo](/assets/logo.png)
 
 ## Features
-[feature highlights]
+- Show Guided Tour Based on Css Class
+- Option for AutoStart or Beacon
+- Tour Run Only Once
 
-## Usage
-[step by step instructions]
+## Basic configuration
 
+- Select AutoStart or Show Beacon:
+-  Create Steps:
+    - Enter Target Element CSS Class
+    - Enter Title
+    - Enter Step Message (TEXT / HTML)
+    - Select Position
+
+![config1](/assets/Config1.PNG)
+
+![config2](/assets/Config2.PNG)
+
+![config3](/assets/config3.PNG)
+
+![config4](/assets/config4.PNG)
 ## Demo project
 [link to sandbox]
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
+- Custom Styling for Tooltip
+- Option for Tour Restart
 
 ## Development and contribution
 [specify contribute]
