@@ -6,21 +6,8 @@ declare function require(name: string): string;
 
 export class preview extends Component<MendixIntroTourPreviewProps> {
     render(): ReactNode {
-        const steps = this.getSteps(this.props.listStep);
-        return <IntroTour steps={steps} />;
+        return <IntroTour steps={this.props.listStep} autoStart={this.props.autoStart} />;
     }
-    getSteps = (stepList: any): any => {
-        const newSteps = stepList.map((stepObj: any) => {
-            const newStep = {
-                content: stepObj.text,
-                placement: stepObj.position,
-                target: stepObj.className,
-                title: stepObj.title
-            };
-            return newStep;
-        });
-        return newSteps;
-    };
 }
 
 export function getPreviewCss(): string {

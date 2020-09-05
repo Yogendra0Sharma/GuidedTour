@@ -3,9 +3,11 @@ import Joyride, { CallBackProps, STATUS, Step } from "react-joyride";
 
 export interface IntroTourProps {
     steps: any;
+    autoStart: boolean;
 }
 interface IntroTourState {
     run: boolean;
+    autoStart: boolean;
     steps: Step[];
 }
 export class IntroTour extends Component<IntroTourProps, IntroTourState> {
@@ -13,47 +15,53 @@ export class IntroTour extends Component<IntroTourProps, IntroTourState> {
         super(props);
         this.state = {
             run: true,
-            steps: this.getSteps(this.props.steps)
+            autoStart: this.props.autoStart,
+            steps: this.getSteps(this.props.steps, this.props.autoStart)
         };
     }
     private handleJoyrideCallback = (data: CallBackProps): void => {
-        const { status, type } = data;
+        const { status } = data;
         const finishedStatuses: string[] = [STATUS.FINISHED, STATUS.SKIPPED];
 
         if (finishedStatuses.includes(status)) {
-            this.setState({ run: false });
+            this.setState({ run: false, autoStart: false });
+            window.localStorage.setItem("tourEnable", 'false');
         }
-
-        // tslint:disable:no-console
-        console.groupCollapsed(type);
-        console.log(data);
-        console.groupEnd();
-        // tslint:enable:no-console
+    };
+    shouldShowTour = (): boolean => {
+        const valueFromStorage = window.localStorage.getItem("tourEnable");
+        return valueFromStorage === undefined || valueFromStorage !== 'false';
     };
     render(): ReactNode {
         const { run, steps } = this.state;
-        return (<Joyride
-            callback={this.handleJoyrideCallback}
-            continuous={true}
-            run={run}
-            scrollToFirstStep={true}
-            showProgress={true}
-            showSkipButton={true}
-            steps={steps}
-            styles={{
-                options: {
-                    zIndex: 10000,
-                },
-            }} />
+        if (!this.shouldShowTour()) {
+            return null;
+        }
+        return (
+            <Joyride
+                callback={this.handleJoyrideCallback}
+                continuous
+                run={run}
+                scrollToFirstStep
+                showProgress
+                showSkipButton
+                steps={steps}
+                styles={{
+                    options: {
+                        zIndex: 10000
+                    }
+                }}
+            />
         );
     }
-    getSteps = (stepList: any): any => {
+    getSteps = (stepList: any, autostart: boolean): any => {
         const newSteps = stepList.map((stepObj: any) => {
             const newStep = {
                 content: stepObj.text,
                 placement: stepObj.position,
                 target: "." + stepObj.className,
-                title: stepObj.title
+                title: stepObj.title,
+                disableBeacon: autostart
             };
             return newStep;
         });

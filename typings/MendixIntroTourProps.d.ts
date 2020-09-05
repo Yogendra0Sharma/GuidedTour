@@ -26,11 +26,13 @@ export interface MendixIntroTourContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex: number;
+    autoStart: boolean;
     listStep: ListStepType[];
 }
 
 export interface MendixIntroTourPreviewProps {
     class: string;
     style: string;
+    autoStart: boolean;
     listStep: ListStepPreviewType[];
 }

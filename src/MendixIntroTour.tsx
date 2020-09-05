@@ -7,7 +7,6 @@ import "./ui/MendixIntroTour.css";
 
 export default class MendixIntroTour extends Component<MendixIntroTourContainerProps> {
     render(): ReactNode {
-        const { listStep } = this.props;
-        return <IntroTour steps={listStep} />;
+        return <IntroTour steps={this.props.listStep} autoStart={this.props.autoStart} />;
     }
 }
