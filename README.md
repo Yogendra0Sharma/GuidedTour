@@ -1,4 +1,4 @@
-## MendixIntroTour
+## GuidedTour
 [Create guided tours in your Mendix apps.]
 
 ## Features
