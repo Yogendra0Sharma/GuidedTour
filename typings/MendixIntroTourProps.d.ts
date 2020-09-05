@@ -5,16 +5,32 @@
  */
 import { CSSProperties } from "react";
 
+export type PositionEnum = "top" | "bottom" | "left" | "right";
+
+export interface ListStepType {
+    className: string;
+    title: string;
+    text: string;
+    position: PositionEnum;
+}
+
+export interface ListStepPreviewType {
+    className: string;
+    title: string;
+    text: string;
+    position: PositionEnum;
+}
+
 export interface MendixIntroTourContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex: number;
-    sampleText: string;
+    listStep: ListStepType[];
 }
 
 export interface MendixIntroTourPreviewProps {
     class: string;
     style: string;
-    sampleText: string;
+    listStep: ListStepPreviewType[];
 }
