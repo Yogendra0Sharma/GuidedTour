@@ -24,12 +24,10 @@ Mendix Guided Tour using [React Joyride](https://github.com/gilbarbara/react-joy
 ![config3](/assets/config3.PNG)
 
 ![config4](/assets/config4.PNG)
-## Demo project
-[link to sandbox]
 
-## Issues, suggestions and feature requests
+## Todo
 - Custom Styling for Tooltip
 - Option for Tour Restart
 
-## Development and contribution
-[specify contribute]
+## Issues, suggestions and feature requests
+![Issue](https://github.com/Yogendra0Sharma/GuidedTour/issues)
