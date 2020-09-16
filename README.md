@@ -30,4 +30,4 @@ Mendix Guided Tour using [React Joyride](https://github.com/gilbarbara/react-joy
 - Option for Tour Restart
 
 ## Issues, suggestions and feature requests
-![Issue](https://github.com/Yogendra0Sharma/GuidedTour/issues)
+[](https://github.com/Yogendra0Sharma/GuidedTour/issues)
